@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="900">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Workstation Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    header {
+      background-color: #e6fd14;
+      text-align: center;
+      padding: 5px;
+      font-size: 2em;
+      font-weight: bold;
+      color: hsl(0, 0%, 0%);
+      border-bottom: 4px solid #7a0202;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      /* Aquí el cambio */
+      gap: 10px;
+      padding: 5px;
+      align-items: stretch;
+      /* Este también cambia para igualar altura */
+    }
+
+    .left-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      gap: 5px;
+    }
+
+
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+      align-items: stretch;
+    }
+
+    .Actionlog {
+      background-color: #2a2a2a;
+      border: 2px solid #ad0000;
+      border-radius: 5px;
+      padding: 5px;
+      text-align: center;
+      text-align: center;
+    }
+
+    .Actionlog img {
+      width: 100%;
+      height: auto;
+      max-height: 150px;
+      /* Ajusta según lo que necesites */
+      object-fit: contain;
+    }
+
+
+    .qr-cell {
+      background-color: #2a2a2a;
+      border: 2px solid #ad0000;
+      border-radius: 10px;
+      padding: 5px;
+      text-align: center;
+      transition: background 0.3s;
+      font-size: 0.7em;
+    }
+
+    .qr-cell:hover {
+      background-color: #3a1f1f;
+    }
+
+    .qr-cell img {
+      width: 90px;
+      height: 90px;
+      object-fit: contain;
+      margin-bottom: 5px;
+    }
+
+    .chart-section {
+      background-color: #1e1e1e;
+      border: 2px solid #f4f816;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 0 20px #fdff0055;
+    }
+
+    .chart-text {
+      color: #f3f707;
+      margin-bottom: 5px;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 430px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .grid-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 20px;
+    }
+
+    .cell {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      min-height: 100px;
+      border: 1px solid #444;
+    }
+
+    .cell img {
+      width: 100%;
+      height: auto;
+      max-height: 450px;
+      margin-bottom: 5px;
+      object-fit: contain;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 5px;
+    }
+
+    .footer-left {
+      display: flex;
+      /* 🔑 Aquí cambia a horizontal */
+      flex-direction: row;
+      /* En línea */
+      justify-content: center;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .footer-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .footer-row .cell {
+      background-color: #1f1f1f;
+      border-left: 5px solid #fe0702;
+      color: #f7a838;
+      font-weight: bold;
+      padding: 10px;
+      flex: 1;
+      /* Hace que se repartan el espacio */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>Workstation Vertimiento</header>
+
+  <!-- Primera fila: 4 QR en 2x2 + gráfica -->
+  <div class="main-grid">
+    <div class="left-section">
+      <div class="qr-grid">
+        <div class="qr-cell">
+          <img src="QR Matriz de epps almacen.png" alt="QR EPPS">
+          <div>QR EPPS</div>
+        </div>
+        <div class="qr-cell">
+          <img src="QR INSPECCIONES OPERADOR LOGÍSTICO.png" alt="Checklist herramientas">
+          <div>Checklist herramientas</div>
+        </div>
+        <div class="qr-cell">
+          <img src="QR SOP Reempaque.png" alt="Procedimientos">
+          <div>SOP</div>
+        </div>
+        <div class="qr-cell">
+          <img src="QR RACI Reempaque.png" alt="QR RACI">
+          <div>QR RACI</div>
+        </div>
+        <div class="qr-cell"><img src="QR prod reempaque.jpg">
+          <div>Reportar mi productividad</div>
+        </div>
+        <div class="qr-cell"><img src="QR informe reempaque.png">
+          <div>Resultados mes</div>
+        </div>
+        <div class="qr-cell"><img src="QR 5Ss Reempaque.png">
+          <div>5S's</div>
+        </div>
+        <div class="qr-cell"><img src="QR 5WHY.jpg">
+          <div>5 Porqués</div>
+        </div>
+        <div class="qr-cell"><img src="QR sitio Web Montevideo.png">
+          <div>WEB Montevideo</div>
+        </div>
+      </div>
+      <div class="Actionlog">
+        <img src="actionlog vertimiento.png" alt="Actionlog">
+      </div>
+    </div>
+
+    <div class="chart-section">
+      <div class="chart-text">Gráfica de intervalo corto</div>
+      <iframe
+        src="https://lookerstudio.google.com/embed/reporting/8e88467f-0ebc-4806-809e-6bec547bf2ca/page/p_hk62otr0td"
+        frameborder="0" style="border:0; width:100%;" allowfullscreen
+        sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-row">
+    <div class="footer-left">
+      <div class="cell">
+        <div class="chart-text">Layout del área</div>
+        <img src="Layout Vertimiento.png" alt="Layout">
+      </div>
+      <div class="cell">
+        <div class="chart-text">Infografía vertimiento</div>
+        <img src="Infografía Vertimiento.png" alt="Política vertimiento">
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="cell">
+        <div class="chart-text">Mapa de procesos</div>
+        <img src="MP Almacen.png" alt="Mapa de procesos">
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
